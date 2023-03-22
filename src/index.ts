@@ -1,10 +1,10 @@
 import { ApiClient } from "./client";
 import { networkConfig } from "./config";
 import {
-  BlockAPI,
-  DelegationAPI,
-  TransactionAPI,
-  IdentityAPI,
+  blockModule,
+  delegationModule,
+  identityModule,
+  transactionModule,
 } from "./modules";
 import { chainIdType } from "./types";
 
@@ -12,28 +12,26 @@ interface ConfigureProps {
   network?: chainIdType;
 }
 
-class MultiversxSDK {
-  private client: ApiClient;
-  public transaction: TransactionAPI;
-  public block: BlockAPI;
-  public delegation: DelegationAPI;
-  public identity: IdentityAPI;
+const mxSDK = () => {
+  const client = new ApiClient();
 
-  constructor() {
-    this.client = new ApiClient();
-    this.transaction = new TransactionAPI(this.client);
-    this.block = new BlockAPI(this.client);
-    this.delegation = new DelegationAPI(this.client);
-    this.identity = new IdentityAPI(this.client);
-  }
+  const block = blockModule(client);
+  const delegation = delegationModule(client);
+  const identity = identityModule(client);
+  const transaction = transactionModule(client);
 
-  configure = ({ network }: ConfigureProps = {}) => {
-    if (network) {
-      this.client.setBaseURL(networkConfig[network].apiAddress);
-    }
+  return {
+    ...block,
+    ...delegation,
+    ...identity,
+    ...transaction,
+
+    configure: ({ network }: ConfigureProps = {}) => {
+      if (network) {
+        client.setBaseURL(networkConfig[network].apiAddress);
+      }
+    },
   };
-}
+};
 
-const multiversxSDK = new MultiversxSDK();
-
-export default multiversxSDK;
+export default mxSDK();
