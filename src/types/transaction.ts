@@ -1,4 +1,4 @@
-import { Amount, AccountAssets, ScamInfo, SmartContractResult } from "./common";
+import { Amount, AccountAssets, ScamInfo, SmartContractResult } from "./";
 
 export interface TransactionAction {
   category: string;

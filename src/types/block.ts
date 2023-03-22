@@ -1,4 +1,4 @@
-import { Identity } from "./common";
+import { Identity } from "./";
 
 export interface BlocksQuery {
   /** Number of items to skip for the result set */

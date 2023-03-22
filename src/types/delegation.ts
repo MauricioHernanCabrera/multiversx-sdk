@@ -1,4 +1,4 @@
-import { Amount } from "./common";
+import { Amount } from "./";
 
 export interface Delegation {
   /**

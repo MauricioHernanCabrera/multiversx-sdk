@@ -4,6 +4,7 @@ import {
   blockModule,
   delegationModule,
   identityModule,
+  keyModule,
   transactionModule,
 } from "./modules";
 import { chainIdType } from "./types";
@@ -19,12 +20,14 @@ const mxSDK = () => {
   const delegation = delegationModule(client);
   const identity = identityModule(client);
   const transaction = transactionModule(client);
+  const key = keyModule(client);
 
   return {
     ...block,
     ...delegation,
     ...identity,
     ...transaction,
+    ...key,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {
