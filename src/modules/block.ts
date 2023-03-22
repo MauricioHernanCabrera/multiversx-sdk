@@ -14,7 +14,7 @@ export const blockModule = (client: ApiClient) => {
      * @description Returns a list of all blocks from all shards
      */
     blocks: (query: BlocksQuery = {}) => {
-      return client.get<Block>(`/blocks?${queryString.stringify(query)}`);
+      return client.get<Block[]>(`/blocks?${queryString.stringify(query)}`);
     },
 
     /**

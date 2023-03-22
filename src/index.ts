@@ -6,6 +6,7 @@ import {
   identityModule,
   keyModule,
   transactionModule,
+  miniblockModule,
 } from "./modules";
 import { chainIdType } from "./types";
 
@@ -21,6 +22,7 @@ const mxSDK = () => {
   const identity = identityModule(client);
   const transaction = transactionModule(client);
   const key = keyModule(client);
+  const miniblock = miniblockModule(client);
 
   return {
     ...block,
@@ -28,6 +30,7 @@ const mxSDK = () => {
     ...identity,
     ...transaction,
     ...key,
+    ...miniblock,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {

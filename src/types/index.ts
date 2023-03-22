@@ -5,3 +5,4 @@ export * from "./identity";
 export * from "./key";
 export * from "./network";
 export * from "./transaction";
+export * from "./miniblock";
