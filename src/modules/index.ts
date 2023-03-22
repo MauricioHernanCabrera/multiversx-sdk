@@ -4,3 +4,4 @@ export * from "./delegation";
 export * from "./identity";
 export * from "./key";
 export * from "./miniblock";
+export * from "./network";
