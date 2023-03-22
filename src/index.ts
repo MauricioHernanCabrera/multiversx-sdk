@@ -1,7 +1,8 @@
 import { ApiClient } from "./client";
 import { networkConfig } from "./config";
-import { TransactionAPI } from "./modules/transaction";
-import { chainIdType } from "./types/network";
+
+import { BlockAPI, TransactionAPI } from "./modules";
+import { chainIdType } from "./types";
 
 interface ConfigureProps {
   network?: chainIdType;
@@ -10,10 +11,12 @@ interface ConfigureProps {
 class MultiversxSDK {
   private client: ApiClient;
   public transaction: TransactionAPI;
+  public block: BlockAPI;
 
   constructor() {
     this.client = new ApiClient();
     this.transaction = new TransactionAPI(this.client);
+    this.block = new BlockAPI(this.client);
   }
 
   configure = ({ network }: ConfigureProps = {}) => {
