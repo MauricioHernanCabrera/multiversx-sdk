@@ -1,7 +1,6 @@
 import { ApiClient } from "./client";
 import { networkConfig } from "./config";
-
-import { BlockAPI, TransactionAPI } from "./modules";
+import { BlockAPI, DelegationAPI, TransactionAPI } from "./modules";
 import { chainIdType } from "./types";
 
 interface ConfigureProps {
@@ -12,11 +11,13 @@ class MultiversxSDK {
   private client: ApiClient;
   public transaction: TransactionAPI;
   public block: BlockAPI;
+  public delegation: DelegationAPI;
 
   constructor() {
     this.client = new ApiClient();
     this.transaction = new TransactionAPI(this.client);
     this.block = new BlockAPI(this.client);
+    this.delegation = new DelegationAPI(this.client);
   }
 
   configure = ({ network }: ConfigureProps = {}) => {
