@@ -14,3 +14,4 @@ export * from "./shard";
 export * from "./stake";
 export * from "./username";
 export * from "./query";
+export * from "./waiting-list";
