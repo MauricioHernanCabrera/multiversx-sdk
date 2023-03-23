@@ -7,3 +7,4 @@ export * from "./network";
 export * from "./transaction";
 export * from "./miniblock";
 export * from "./tag";
+export * from "./node";
