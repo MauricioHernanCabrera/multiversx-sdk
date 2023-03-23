@@ -12,3 +12,4 @@ export * from "./round";
 export * from "./shard";
 export * from "./stake";
 export * from "./username";
+export * from "./query";

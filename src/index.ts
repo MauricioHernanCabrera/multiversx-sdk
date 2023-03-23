@@ -15,6 +15,7 @@ import {
   shardModule,
   stakeModule,
   usernameModule,
+  queryModule,
 } from "./modules";
 import { chainIdType } from "./types";
 
@@ -39,6 +40,7 @@ const mxSDK = () => {
   const shard = shardModule(client);
   const stake = stakeModule(client);
   const username = usernameModule(client);
+  const query = queryModule(client);
 
   return {
     ...block,
@@ -55,6 +57,7 @@ const mxSDK = () => {
     ...shard,
     ...stake,
     ...username,
+    ...query,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {
