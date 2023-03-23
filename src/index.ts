@@ -10,6 +10,7 @@ import {
   networkModule,
   tagModule,
   nodeModule,
+  providerModule,
 } from "./modules";
 import { chainIdType } from "./types";
 
@@ -29,6 +30,7 @@ const mxSDK = () => {
   const network = networkModule(client);
   const tag = tagModule(client);
   const node = nodeModule(client);
+  const provider = providerModule(client);
 
   return {
     ...block,
@@ -40,6 +42,7 @@ const mxSDK = () => {
     ...network,
     ...tag,
     ...node,
+    ...provider,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {

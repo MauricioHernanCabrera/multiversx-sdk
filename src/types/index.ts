@@ -8,3 +8,4 @@ export * from "./transaction";
 export * from "./miniblock";
 export * from "./tag";
 export * from "./node";
+export * from "./provider";

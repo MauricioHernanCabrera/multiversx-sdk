@@ -7,3 +7,4 @@ export * from "./miniblock";
 export * from "./network";
 export * from "./tag";
 export * from "./node";
+export * from "./provider";
