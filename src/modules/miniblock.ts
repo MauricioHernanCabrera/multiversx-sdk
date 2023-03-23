@@ -17,7 +17,7 @@ export const miniblockModule = (client: ApiClient) => {
      * @description Returns miniblock details for a given miniBlockHash.
      */
     miniblockDetails: (miniBlockHash: string) => {
-      return client.get<MiniBlockDetailed>(`/miniblocks?${miniBlockHash}`);
+      return client.get<MiniBlockDetailed>(`/miniblocks/${miniBlockHash}`);
     },
   };
 };
