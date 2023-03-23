@@ -14,6 +14,7 @@ import {
   roundModule,
   shardModule,
   stakeModule,
+  usernameModule,
 } from "./modules";
 import { chainIdType } from "./types";
 
@@ -37,6 +38,7 @@ const mxSDK = () => {
   const round = roundModule(client);
   const shard = shardModule(client);
   const stake = stakeModule(client);
+  const username = usernameModule(client);
 
   return {
     ...block,
@@ -52,6 +54,7 @@ const mxSDK = () => {
     ...round,
     ...shard,
     ...stake,
+    ...username,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {
