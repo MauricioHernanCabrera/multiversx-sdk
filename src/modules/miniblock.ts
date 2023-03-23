@@ -1,7 +1,5 @@
-import * as queryString from "query-string";
-
 import { ApiClient } from "../client";
-import { MiniblocksQuery, MiniBlockDetailed } from "../types/miniblock";
+import { MiniblocksQuery, MiniBlockDetailed } from "../types";
 
 export const miniblockModule = (client: ApiClient) => {
   return {
@@ -9,8 +7,9 @@ export const miniblockModule = (client: ApiClient) => {
      * @description Returns all distinct miniblocks
      */
     miniblocks: (query: MiniblocksQuery = {}) => {
-      return client.get<MiniBlockDetailed[]>(
-        `/miniblocks?${queryString.stringify(query)}`
+      return client.get<MiniBlockDetailed[], MiniblocksQuery>(
+        `/miniblocks`,
+        query
       );
     },
 

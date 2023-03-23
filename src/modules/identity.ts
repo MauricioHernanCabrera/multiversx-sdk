@@ -1,7 +1,5 @@
-import * as queryString from "query-string";
-
 import { ApiClient } from "../client";
-import { IdentitiesQuery, Identity } from "../types/identity";
+import { IdentitiesQuery, Identity } from "../types";
 
 export const identityModule = (client: ApiClient) => {
   return {
@@ -9,9 +7,7 @@ export const identityModule = (client: ApiClient) => {
      * @description List of all node identities, used to group nodes by the same entity. "Free-floating" nodes that do not belong to any identity will also be returned
      */
     identities: (query: IdentitiesQuery = {}) => {
-      return client.get<Identity[]>(
-        `/identities?${queryString.stringify(query)}`
-      );
+      return client.get<Identity[], IdentitiesQuery>(`/identities`, query);
     },
 
     /**

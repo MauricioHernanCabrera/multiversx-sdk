@@ -1,5 +1,5 @@
 import { ApiClient } from "../client";
-import { DappConfig } from "../types/dapp-config";
+import { DappConfig } from "../types";
 
 export const dappConfigModule = (client: ApiClient) => {
   return {

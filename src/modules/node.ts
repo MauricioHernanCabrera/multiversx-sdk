@@ -1,7 +1,5 @@
-import * as queryString from "query-string";
-
 import { ApiClient } from "../client";
-import { Node, NodesCountQuery, NodesQuery, NodeVersion } from "../types/node";
+import { Node, NodesCountQuery, NodesQuery, NodeVersion } from "../types";
 
 export const nodeModule = (client: ApiClient) => {
   return {
@@ -9,7 +7,7 @@ export const nodeModule = (client: ApiClient) => {
      * @description Returns a list of nodes of type observer or validator
      */
     nodes: (query: NodesQuery = {}) => {
-      return client.get<Node[]>(`/nodes?${queryString.stringify(query)}`);
+      return client.get<Node[], NodesQuery>(`/nodes`, query);
     },
 
     /**
@@ -23,7 +21,7 @@ export const nodeModule = (client: ApiClient) => {
      * @description Returns number of all observer/validator nodes available on blockchain
      */
     nodesCount: (query: NodesCountQuery = {}) => {
-      return client.get<number>(`/nodes/count?${queryString.stringify(query)}`);
+      return client.get<number, NodesCountQuery>(`/nodes/count`, query);
     },
 
     /**

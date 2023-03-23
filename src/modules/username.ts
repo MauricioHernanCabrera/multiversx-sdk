@@ -1,5 +1,5 @@
 import { ApiClient } from "../client";
-import { AccountUsername } from "../types/username";
+import { AccountUsername } from "../types";
 
 export const usernameModule = (client: ApiClient) => {
   return {

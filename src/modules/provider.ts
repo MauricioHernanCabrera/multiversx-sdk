@@ -1,7 +1,5 @@
-import * as queryString from "query-string";
-
 import { ApiClient } from "../client";
-import { ProvidersQuery, Provider } from "../types/provider";
+import { ProvidersQuery, Provider } from "../types";
 
 export const providerModule = (client: ApiClient) => {
   return {
@@ -9,9 +7,7 @@ export const providerModule = (client: ApiClient) => {
      * @description Returns a list of all providers
      */
     providers: (query: ProvidersQuery = {}) => {
-      return client.get<Provider[]>(
-        `/providers?${queryString.stringify(query)}`
-      );
+      return client.get<Provider[], ProvidersQuery>(`/providers`, query);
     },
 
     /**

@@ -21,6 +21,7 @@ import {
   dappConfigModule,
   transferModule,
   batchModule,
+  accountModule,
 } from "./modules";
 import { chainIdType } from "./types";
 
@@ -51,6 +52,7 @@ const mxSDK = () => {
   const dappConfig = dappConfigModule(client);
   const transfer = transferModule(client);
   const batch = batchModule(client);
+  const account = accountModule(client);
 
   return {
     ...block,
@@ -73,6 +75,7 @@ const mxSDK = () => {
     ...dappConfig,
     ...transfer,
     ...batch,
+    ...account,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {

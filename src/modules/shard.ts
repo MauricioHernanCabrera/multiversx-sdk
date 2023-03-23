@@ -1,7 +1,5 @@
-import * as queryString from "query-string";
-
 import { ApiClient } from "../client";
-import { Shard, ShardsQuery } from "../types/shard";
+import { Shard, ShardsQuery } from "../types";
 
 export const shardModule = (client: ApiClient) => {
   return {
@@ -9,7 +7,7 @@ export const shardModule = (client: ApiClient) => {
      * @description Returns all available shards
      */
     shards: (query: ShardsQuery = {}) => {
-      return client.get<Shard[]>(`/shards?${queryString.stringify(query)}`);
+      return client.get<Shard[], ShardsQuery>(`/shards`, query);
     },
   };
 };

@@ -1,4 +1,4 @@
-import { chainIdType, NetworkType } from "./../types/network";
+import { chainIdType, NetworkType } from "./../types";
 
 export const networkConfig: Record<chainIdType, NetworkType> = {
   devnet: {

@@ -18,3 +18,4 @@ export * from "./infra";
 export * from "./dapp-config";
 export * from "./transfer";
 export * from "./batch";
+export * from "./account";

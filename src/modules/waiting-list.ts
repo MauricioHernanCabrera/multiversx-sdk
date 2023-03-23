@@ -1,7 +1,5 @@
-import * as queryString from "query-string";
-
 import { ApiClient } from "../client";
-import { WaitingList, WaitingListQuery } from "../types/waiting-list";
+import { WaitingList, WaitingListQuery } from "../types";
 
 export const waitingListModule = (client: ApiClient) => {
   return {
@@ -9,8 +7,9 @@ export const waitingListModule = (client: ApiClient) => {
      * @description Returns node waiting list
      */
     waitingList: (query: WaitingListQuery = {}) => {
-      return client.get<WaitingList[]>(
-        `/waiting-list?${queryString.stringify(query)}`
+      return client.get<WaitingList[], WaitingListQuery>(
+        `/waiting-list`,
+        query
       );
     },
 

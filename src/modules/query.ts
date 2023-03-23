@@ -1,5 +1,5 @@
 import { ApiClient } from "../client";
-import { VmQueryRequest } from "../types/query";
+import { VmQueryRequest } from "../types";
 
 export const queryModule = (client: ApiClient) => {
   return {

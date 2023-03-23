@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from "axios";
+import * as queryString from "query-string";
 
 export class ApiClient {
   private axiosInstance: AxiosInstance;
@@ -15,8 +16,10 @@ export class ApiClient {
     this.axiosInstance.defaults.baseURL = baseURL;
   };
 
-  async get<T>(path: string) {
-    const response = await this.axiosInstance.get<T>(path);
+  async get<T, K = undefined>(path: string, query?: K) {
+    const response = await this.axiosInstance.get<T>(
+      `${path}?${queryString.stringify(query)}`
+    );
     return response.data;
   }
 

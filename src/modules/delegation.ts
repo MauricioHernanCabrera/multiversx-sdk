@@ -1,5 +1,5 @@
 import { ApiClient } from "../client";
-import { Delegation, DelegationLegacy } from "../types/delegation";
+import { Delegation, DelegationLegacy } from "../types";
 
 export const delegationModule = (client: ApiClient) => {
   return {

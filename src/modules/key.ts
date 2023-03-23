@@ -1,5 +1,5 @@
 import { ApiClient } from "../client";
-import { KeyUnbondPeriod } from "../types/key";
+import { KeyUnbondPeriod } from "../types";
 
 export const keyModule = (client: ApiClient) => {
   return {
