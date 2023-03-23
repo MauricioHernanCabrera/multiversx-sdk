@@ -20,6 +20,7 @@ import {
   infraModule,
   dappConfigModule,
   transferModule,
+  batchModule,
 } from "./modules";
 import { chainIdType } from "./types";
 
@@ -49,6 +50,7 @@ const mxSDK = () => {
   const infra = infraModule(client);
   const dappConfig = dappConfigModule(client);
   const transfer = transferModule(client);
+  const batch = batchModule(client);
 
   return {
     ...block,
@@ -70,6 +72,7 @@ const mxSDK = () => {
     ...infra,
     ...dappConfig,
     ...transfer,
+    ...batch,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {
