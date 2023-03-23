@@ -11,3 +11,4 @@ export * from "./node";
 export * from "./provider";
 export * from "./round";
 export * from "./shard";
+export * from "./stake";
