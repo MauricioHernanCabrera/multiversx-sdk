@@ -16,3 +16,4 @@ export * from "./query";
 export * from "./waiting-list";
 export * from "./infra";
 export * from "./dapp-config";
+export * from "./transfer";

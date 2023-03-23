@@ -19,6 +19,7 @@ import {
   waitingListModule,
   infraModule,
   dappConfigModule,
+  transferModule,
 } from "./modules";
 import { chainIdType } from "./types";
 
@@ -47,6 +48,7 @@ const mxSDK = () => {
   const waitingList = waitingListModule(client);
   const infra = infraModule(client);
   const dappConfig = dappConfigModule(client);
+  const transfer = transferModule(client);
 
   return {
     ...block,
@@ -67,6 +69,7 @@ const mxSDK = () => {
     ...waitingList,
     ...infra,
     ...dappConfig,
+    ...transfer,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {
