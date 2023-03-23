@@ -1,4 +1,12 @@
-import { AccountAssets, Amount, ScamInfo } from "./common";
+import {
+  Amount,
+  ScamInfo,
+  CollectionTrait,
+  CollectionAuctionStats,
+  CollectionRoles,
+} from "./";
+
+export type AccountAssets = object;
 
 export interface AccountVerificationSource {
   /** Abi file source */
@@ -287,45 +295,6 @@ export interface AccountRoleCollectionsQuery {
   canTransferRole?: boolean;
   /** Exclude collections of type "MetaESDT" in the response */
   excludeMetaESDT?: boolean;
-}
-
-export interface CollectionTraitAttribute {
-  name: string;
-  occurrenceCount: number;
-  occurrencePercentage: number;
-}
-
-export interface CollectionTrait {
-  name: string;
-  occurrenceCount: number;
-  occurrencePercentage: number;
-  attributes: CollectionTraitAttribute[];
-}
-
-export interface CollectionAuctionStats {
-  activeAuctions: number;
-  endedAuctions: number;
-  maxPrice: string;
-  minPrice: string;
-  saleAverage: string;
-  volumeTraded: string;
-}
-
-export interface CollectionRoles {
-  address: string | null;
-  /** @default false */
-  canCreate: boolean;
-  /** @default false */
-  canBurn: boolean;
-  /** @default false */
-  canAddQuantity: boolean;
-  /** @default false */
-  canUpdateAttributes: boolean;
-  /** @default false */
-  canAddUri: boolean;
-  /** @default false */
-  canTransfer: boolean;
-  roles: string[];
 }
 
 export interface NftCollectionWithRoles {

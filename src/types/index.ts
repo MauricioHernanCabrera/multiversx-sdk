@@ -19,3 +19,4 @@ export * from "./dapp-config";
 export * from "./transfer";
 export * from "./batch";
 export * from "./account";
+export * from "./collection";

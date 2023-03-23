@@ -1,6 +1,4 @@
-import { TransactionAction, TransactionLog } from "./";
-
-export type AccountAssets = object;
+import { AccountAssets, TransactionAction, TransactionLog } from "./";
 
 export type Amount = object;
 
