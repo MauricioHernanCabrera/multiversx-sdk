@@ -15,3 +15,4 @@ export * from "./username";
 export * from "./query";
 export * from "./waiting-list";
 export * from "./infra";
+export * from "./dapp-config";
