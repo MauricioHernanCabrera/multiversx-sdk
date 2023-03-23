@@ -17,6 +17,7 @@ import {
   usernameModule,
   queryModule,
   waitingListModule,
+  infraModule,
 } from "./modules";
 import { chainIdType } from "./types";
 
@@ -43,6 +44,7 @@ const mxSDK = () => {
   const username = usernameModule(client);
   const query = queryModule(client);
   const waitingList = waitingListModule(client);
+  const infra = infraModule(client);
 
   return {
     ...block,
@@ -61,6 +63,7 @@ const mxSDK = () => {
     ...username,
     ...query,
     ...waitingList,
+    ...infra,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {
