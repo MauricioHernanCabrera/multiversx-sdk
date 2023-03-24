@@ -22,6 +22,7 @@ import {
   transferModule,
   batchModule,
   accountModule,
+  resultModule,
 } from "./modules";
 import { collectionModule } from "./modules/collection";
 import { chainIdType } from "./types";
@@ -55,6 +56,7 @@ const mxSDK = () => {
   const batch = batchModule(client);
   const account = accountModule(client);
   const collection = collectionModule(client);
+  const result = resultModule(client);
 
   return {
     ...block,
@@ -79,6 +81,7 @@ const mxSDK = () => {
     ...batch,
     ...account,
     ...collection,
+    ...result,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {
