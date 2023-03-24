@@ -21,3 +21,4 @@ export * from "./batch";
 export * from "./account";
 export * from "./collection";
 export * from "./result";
+export * from "./token";

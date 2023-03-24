@@ -23,6 +23,7 @@ import {
   batchModule,
   accountModule,
   resultModule,
+  tokenModule,
 } from "./modules";
 import { collectionModule } from "./modules/collection";
 import { chainIdType } from "./types";
@@ -57,6 +58,7 @@ const mxSDK = () => {
   const account = accountModule(client);
   const collection = collectionModule(client);
   const result = resultModule(client);
+  const token = tokenModule(client);
 
   return {
     ...block,
@@ -82,6 +84,7 @@ const mxSDK = () => {
     ...account,
     ...collection,
     ...result,
+    ...token,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {

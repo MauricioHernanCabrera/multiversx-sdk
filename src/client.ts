@@ -16,6 +16,10 @@ export class ApiClient {
     this.axiosInstance.defaults.baseURL = baseURL;
   };
 
+  getBaseURL = () => {
+    return this.axiosInstance.defaults.baseURL;
+  };
+
   async get<T, K = undefined>(path: string, query?: K) {
     const response = await this.axiosInstance.get<T>(
       `${path}?${queryString.stringify(query)}`

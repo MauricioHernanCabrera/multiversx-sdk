@@ -4,6 +4,10 @@ import {
   CollectionTrait,
   CollectionAuctionStats,
   CollectionRoles,
+  TokenAssets,
+  TokenWithBalance,
+  TokenRoles,
+  TokenWithRoles,
 } from "./";
 
 export type AccountAssets = object;
@@ -150,92 +154,6 @@ export interface AccountVerification {
   ipfsFileHash: string;
 }
 
-export interface TokenAssets {
-  website: string;
-  description: string;
-  /** @default "inactive" */
-  status: "active" | "inactive";
-  pngUrl: string;
-  svgUrl: string;
-  ledgerSignature: string;
-  lockedAccounts: string;
-  extraTokens: string[];
-  preferredRankAlgorithm:
-    | "trait"
-    | "statistical"
-    | "openRarity"
-    | "jaccardDistances"
-    | "custom"
-    | null;
-  priceSource: number | null;
-}
-
-export interface TokenWithBalance {
-  type: "FungibleESDT" | "NonFungibleESDT" | "SemiFungibleESDT" | "MetaESDT";
-  identifier: string;
-  collection: string | null;
-  nonce: number | null;
-  name: string;
-  ticker: string;
-  owner: string;
-  /**
-   * Amount
-   * @example ""9340000000000000000""
-   */
-  minted: Amount;
-  /**
-   * Amount
-   * @example ""780000000000000000""
-   */
-  burnt: Amount;
-  /**
-   * Amount
-   * @example ""7200000000000000000""
-   */
-  initialMinted: Amount;
-  decimals: number;
-  /** @default false */
-  isPaused: boolean;
-  assets: TokenAssets | null;
-  transactions: number | null;
-  accounts: number | null;
-  /** @default false */
-  canUpgrade: boolean;
-  canMint: boolean | null;
-  canBurn: boolean | null;
-  canChangeOwner: boolean | null;
-  canAddSpecialRoles: boolean | null;
-  /** @default false */
-  canPause: boolean;
-  canFreeze: boolean | null;
-  /** @default false */
-  canWipe: boolean;
-  canTransferNftCreateRole: boolean | null;
-  price: number | null;
-  marketCap: number | null;
-  /**
-   * Amount
-   * Supply amount
-   * @example ""4100000000000000000""
-   */
-  supply: Amount;
-  /**
-   * Amount
-   * Circulating supply amount
-   * @example ""3360000000000000000""
-   */
-  circulatingSupply: Amount;
-  /** Creation timestamp */
-  timestamp: number;
-  /**
-   * Amount
-   * @example ""2100000000000000000""
-   */
-  balance: Amount;
-  valueUsd: number | null;
-  attributes: string | null;
-}
-
 export interface AccountTokensQuery {
   /** Number of items to skip for the result set */
   from?: number;
@@ -355,87 +273,6 @@ export interface AccountRoleCollectionsCountQuery {
   canAddQuantity?: boolean;
   /** Exclude collections of type "MetaESDT" in the response */
   excludeMetaESDT?: boolean;
-}
-
-export interface TokenRoles {
-  address: string | null;
-  canLocalMint: boolean | null;
-  canLocalBurn: boolean | null;
-  canCreate: boolean | null;
-  canBurn: boolean | null;
-  canAddQuantity: boolean | null;
-  canUpdateAttributes: boolean | null;
-  canAddUri: boolean | null;
-  canTransfer: boolean | null;
-  roles: string[];
-}
-
-export interface TokenWithRoles {
-  type: "FungibleESDT" | "NonFungibleESDT" | "SemiFungibleESDT" | "MetaESDT";
-  identifier: string;
-  collection: string | null;
-  nonce: number | null;
-  name: string;
-  ticker: string;
-  owner: string;
-  /**
-   * Amount
-   * @example ""9340000000000000000""
-   */
-  minted: Amount;
-  /**
-   * Amount
-   * @example ""780000000000000000""
-   */
-  burnt: Amount;
-  /**
-   * Amount
-   * @example ""7200000000000000000""
-   */
-  initialMinted: Amount;
-  decimals: number;
-  /** @default false */
-  isPaused: boolean;
-  assets: TokenAssets | null;
-  transactions: number | null;
-  accounts: number | null;
-  /** @default false */
-  canUpgrade: boolean;
-  canMint: boolean | null;
-  canBurn: boolean | null;
-  canChangeOwner: boolean | null;
-  canAddSpecialRoles: boolean | null;
-  /** @default false */
-  canPause: boolean;
-  canFreeze: boolean | null;
-  /** @default false */
-  canWipe: boolean;
-  canTransferNftCreateRole: boolean | null;
-  price: number | null;
-  marketCap: number | null;
-  /**
-   * Amount
-   * Supply amount
-   * @example ""4100000000000000000""
-   */
-  supply: Amount;
-  /**
-   * Amount
-   * Circulating supply amount
-   * @example ""3360000000000000000""
-   */
-  circulatingSupply: Amount;
-  /** Creation timestamp */
-  timestamp: number;
-  role: TokenRoles;
-  address: string | null;
-  canLocalMint: boolean | null;
-  canLocalBurn: boolean | null;
-  canCreate: boolean | null;
-  canAddQuantity: boolean | null;
-  canUpdateAttributes: boolean | null;
-  canAddUri: boolean | null;
-  canTransfer: boolean | null;
 }
 
 export interface AccountTokenRolesQuery {

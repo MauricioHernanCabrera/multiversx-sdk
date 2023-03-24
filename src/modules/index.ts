@@ -20,3 +20,4 @@ export * from "./transfer";
 export * from "./batch";
 export * from "./account";
 export * from "./result";
+export * from "./token";
