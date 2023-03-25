@@ -14,7 +14,7 @@ export interface Tag {
   count: number | null;
 }
 
-export interface TotalNumberOfNftTagsQuery {
+export interface NftTagsCountQuery {
   /** Search by tag name */
   search?: string;
 }

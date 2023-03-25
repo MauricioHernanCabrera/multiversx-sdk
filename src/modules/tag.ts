@@ -1,10 +1,13 @@
 import { ApiClient } from "../client";
-import { NftTagsQuery, Tag, TotalNumberOfNftTagsQuery } from "../types";
+import { NftTagsQuery, Tag, NftTagsCountQuery } from "../types";
 
 export const tagModule = (client: ApiClient) => {
   return {
     /**
      * @description Returns all distinct NFT tags
+     *
+     * @tags tag
+     * @request GET:/tags
      */
     nftTags: (query: NftTagsQuery = {}) => {
       return client.get<Tag[], NftTagsQuery>(`/tags`, query);
@@ -12,18 +15,21 @@ export const tagModule = (client: ApiClient) => {
 
     /**
      * @description Returns total number of distinct NFT Tags available on blockchain
+     *
+     * @tags tag
+     * @request GET:/tags/count
      */
-    totalNumberOfNftTags: (query: TotalNumberOfNftTagsQuery = {}) => {
-      return client.get<number, TotalNumberOfNftTagsQuery>(
-        `/tags/count`,
-        query
-      );
+    nftTagsCount: (query: NftTagsCountQuery = {}) => {
+      return client.get<number, NftTagsCountQuery>(`/tags/count`, query);
     },
 
     /**
      * @description Return NFT tag details
+     *
+     * @tags tag
+     * @request GET:/tags/{tag}
      */
-    tagDetails: (tag: string) => {
+    nftTagDetails: (tag: string) => {
       return client.get<Tag>(`/tags/${tag}`);
     },
   };

@@ -5,6 +5,9 @@ export const delegationModule = (client: ApiClient) => {
   return {
     /**
      * @description Returns delegation staking contract information
+     *
+     * @tags delegation
+     * @request GET:/delegation
      */
     delegationStatistics: () => {
       return client.get<Delegation>(`/delegation`);
@@ -12,6 +15,9 @@ export const delegationModule = (client: ApiClient) => {
 
     /**
      * @description Returns legacy delegation contract global information
+     *
+     * @tags delegation
+     * @request GET:/delegation-legacy
      */
     legacyDelegationStatistics: () => {
       return client.get<DelegationLegacy>(`/delegation-legacy`);

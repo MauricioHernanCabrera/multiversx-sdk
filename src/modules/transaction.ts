@@ -14,6 +14,9 @@ export const transactionModule = (client: ApiClient) => {
   return {
     /**
      * @description Returns a list of transactions available on the blockchain.
+     *
+     * @tags transaction
+     * @request GET:/transactions
      */
     transactionList: (query: TransactionListQuery = {}) => {
       return client.get<Transaction[], TransactionListQuery>(
@@ -24,6 +27,9 @@ export const transactionModule = (client: ApiClient) => {
 
     /**
      * @description Posts a signed transaction on the blockchain
+     *
+     * @tags transaction
+     * @request POST:/transactions
      */
     sendTransaction: (data: TransactionCreate) => {
       return client.post<TransactionSendResult, TransactionCreate>(
@@ -34,6 +40,9 @@ export const transactionModule = (client: ApiClient) => {
 
     /**
      * @description Returns the total number of transactions
+     *
+     * @tags transaction
+     * @request GET:/transactions/count
      */
     transactionsCount: (query: TransactionsCountQuery = {}) => {
       return client.get<number, TransactionsCountQuery>(
@@ -44,6 +53,9 @@ export const transactionModule = (client: ApiClient) => {
 
     /**
      * @description Return transaction details for a given transaction hash
+     *
+     * @tags transaction
+     * @request GET:/transactions/{txHash}
      */
     transactionDetails: (txHash, query: TransactionDetailsQuery = {}) => {
       return client.get<TransactionDetailed, TransactionDetailsQuery>(
@@ -54,6 +66,9 @@ export const transactionModule = (client: ApiClient) => {
 
     /**
      * @description Decodes transaction action, given a minimum set of transaction details
+     *
+     * @tags transaction
+     * @request GET:/transactions/decode
      */
     decodeTransaction: (data: TransactionDecodeDto) => {
       return client.post<TransactionDecodeDto, TransactionDecodeDto>(

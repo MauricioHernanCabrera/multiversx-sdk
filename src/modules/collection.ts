@@ -19,6 +19,9 @@ export const collectionModule = (client: ApiClient) => {
   return {
     /**
      * @description Returns non-fungible/semi-fungible/meta-esdt collections
+     *
+     * @tags collection
+     * @request GET:/collections
      */
     collections: (query: CollectionsQuery = {}) => {
       return client.get<NftCollection[], CollectionsQuery>(
@@ -29,6 +32,9 @@ export const collectionModule = (client: ApiClient) => {
 
     /**
      * @description Returns non-fungible/semi-fungible/meta-esdt collection count
+     *
+     * @tags collection
+     * @request GET:/collections/count
      */
     collectionsCount: (query: CollectionsCountQuery = {}) => {
       return client.get<number, CollectionsCountQuery>(
@@ -39,6 +45,9 @@ export const collectionModule = (client: ApiClient) => {
 
     /**
      * @description Returns non-fungible/semi-fungible/meta-esdt collection details
+     *
+     * @tags collection
+     * @request GET:/collections/{collection}
      */
     collectionDetails: (collection: string) => {
       return client.get<NftCollectionDetailed>(`/collections/${collection}`);
@@ -46,6 +55,9 @@ export const collectionModule = (client: ApiClient) => {
 
     /**
      * @description Returns NFT ranks in case the custom ranking preferred algorithm was set
+     *
+     * @tags collection
+     * @request GET:/collections/{collection}/ranks
      */
     collectionRanks: (collection: string) => {
       return client.get<NftRank[]>(`/collections/${collection}/ranks`);
@@ -53,6 +65,9 @@ export const collectionModule = (client: ApiClient) => {
 
     /**
      * @description Returns non-fungible/semi-fungible/meta-esdt tokens that belong to a collection
+     *
+     * @tags collection
+     * @request GET:/collections/{collection}/nfts
      */
     collectionNfts: (collection: string, query: CollectionNftsQuery = {}) => {
       return client.get<Nft[], CollectionNftsQuery>(
@@ -63,6 +78,9 @@ export const collectionModule = (client: ApiClient) => {
 
     /**
      * @description Returns non-fungible/semi-fungible/meta-esdt token count that belong to a collection
+     *
+     * @tags collection
+     * @request GET:/collections/{collection}/nfts/count
      */
     collectionNftsCount: (
       collection: string,
@@ -76,6 +94,9 @@ export const collectionModule = (client: ApiClient) => {
 
     /**
      * @description Returns a list of addresses and balances for a specific collection
+     *
+     * @tags collection
+     * @request GET:/collections/{collection}/accounts
      */
     collectionAccounts: (
       collection: string,
@@ -89,6 +110,9 @@ export const collectionModule = (client: ApiClient) => {
 
     /**
      * @description Returns a list of transactions for a specific collection.
+     *
+     * @tags collection
+     * @request GET:/collections/{collection}/transactions
      */
     collectionTransactions: (
       collection: string,
@@ -102,6 +126,9 @@ export const collectionModule = (client: ApiClient) => {
 
     /**
      * @description Returns the total number of transactions for a specific collection
+     *
+     * @tags collection
+     * @request GET:/collections/{collection}/transactions/count
      */
     collectionTransactionsCount: (
       collection: string,
