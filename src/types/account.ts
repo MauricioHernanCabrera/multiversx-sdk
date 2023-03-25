@@ -5,9 +5,6 @@ import {
   CollectionAuctionStats,
   CollectionRoles,
   TokenAssets,
-  TokenWithBalance,
-  TokenRoles,
-  TokenWithRoles,
 } from "./";
 
 export type AccountAssets = object;
@@ -858,7 +855,3 @@ export interface AccountEsdtHistory {
   /** @example "XPACHIEVE-5a0519-01" */
   identifier: string;
 }
-
-// export interface asdasdas {}
-
-// export interface asdasdas {}

@@ -441,5 +441,3 @@ export interface TokenTransfersCountQuery {
   /** After timestamp */
   after?: number;
 }
-
-// export interface asdasdas {}

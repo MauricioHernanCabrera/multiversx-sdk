@@ -36,6 +36,3 @@ export interface SmartContractResultsQuery {
   /** Original transaction hashes */
   originalTxHashes?: string[];
 }
-
-// export interface aaaa {}
-// export interface aaaa {}

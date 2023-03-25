@@ -24,8 +24,10 @@ import {
   accountModule,
   resultModule,
   tokenModule,
+  xexchangeModule,
+  collectionModule,
+  marketplaceModule,
 } from "./modules";
-import { collectionModule } from "./modules/collection";
 import { chainIdType } from "./types";
 
 interface ConfigureProps {
@@ -59,6 +61,8 @@ const mxSDK = () => {
   const collection = collectionModule(client);
   const result = resultModule(client);
   const token = tokenModule(client);
+  const xexchange = xexchangeModule(client);
+  const marketplace = marketplaceModule(client);
 
   return {
     ...block,
@@ -85,6 +89,8 @@ const mxSDK = () => {
     ...collection,
     ...result,
     ...token,
+    ...xexchange,
+    ...marketplace,
 
     configure: ({ network }: ConfigureProps = {}) => {
       if (network) {

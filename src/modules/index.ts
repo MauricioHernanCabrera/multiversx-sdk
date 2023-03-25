@@ -21,3 +21,6 @@ export * from "./batch";
 export * from "./account";
 export * from "./result";
 export * from "./token";
+export * from "./xexchange";
+export * from "./collection";
+export * from "./marketplace";
