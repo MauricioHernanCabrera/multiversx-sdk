@@ -24,3 +24,4 @@ export * from "./result";
 export * from "./token";
 export * from "./xexchange";
 export * from "./marketplace";
+export * from "./config";

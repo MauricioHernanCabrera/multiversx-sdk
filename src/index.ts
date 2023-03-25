@@ -28,11 +28,7 @@ import {
   collectionModule,
   marketplaceModule,
 } from "./modules";
-import { chainIdType } from "./types";
-
-interface ConfigureProps {
-  network?: chainIdType;
-}
+import { ConfigureProps } from "./types";
 
 const mxSDK = () => {
   const client = new ApiClient();
@@ -92,9 +88,9 @@ const mxSDK = () => {
     ...xexchange,
     ...marketplace,
 
-    configure: ({ network }: ConfigureProps = {}) => {
-      if (network) {
-        client.setBaseURL(networkConfig[network].apiAddress);
+    configure: ({ chainId }: ConfigureProps = {}) => {
+      if (chainId) {
+        client.setBaseURL(networkConfig[chainId].apiAddress);
       }
     },
   };

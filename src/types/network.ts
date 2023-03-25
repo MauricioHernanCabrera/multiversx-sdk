@@ -1,9 +1,3 @@
-export type chainIdType = "mainnet" | "testnet" | "devnet";
-
-export interface NetworkType {
-  apiAddress: string;
-}
-
 export interface NetworkConstants {
   /** The chain identifier */
   chainId: string;
