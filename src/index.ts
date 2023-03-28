@@ -1,92 +1,92 @@
 import { ApiClient } from "./client";
 import { networkConfig } from "./config";
 import {
+  accountModule,
+  batchModule,
   blockModule,
+  collectionModule,
+  dappConfigModule,
   delegationModule,
   identityModule,
+  infraModule,
   keyModule,
-  transactionModule,
+  marketplaceModule,
   miniblockModule,
   networkModule,
-  tagModule,
   nodeModule,
   providerModule,
+  queryModule,
+  resultModule,
   roundModule,
   shardModule,
   stakeModule,
-  usernameModule,
-  queryModule,
-  waitingListModule,
-  infraModule,
-  dappConfigModule,
-  transferModule,
-  batchModule,
-  accountModule,
-  resultModule,
+  tagModule,
   tokenModule,
+  transactionModule,
+  transferModule,
+  usernameModule,
+  waitingListModule,
   xexchangeModule,
-  collectionModule,
-  marketplaceModule,
 } from "./modules";
 import { ConfigureProps } from "./types";
 
 const mxSDK = () => {
   const client = new ApiClient();
 
+  const account = accountModule(client);
+  const batch = batchModule(client);
   const block = blockModule(client);
+  const collection = collectionModule(client);
+  const dappConfig = dappConfigModule(client);
   const delegation = delegationModule(client);
   const identity = identityModule(client);
-  const transaction = transactionModule(client);
+  const infra = infraModule(client);
   const key = keyModule(client);
+  const marketplace = marketplaceModule(client);
   const miniblock = miniblockModule(client);
   const network = networkModule(client);
-  const tag = tagModule(client);
   const node = nodeModule(client);
   const provider = providerModule(client);
+  const query = queryModule(client);
+  const result = resultModule(client);
   const round = roundModule(client);
   const shard = shardModule(client);
   const stake = stakeModule(client);
-  const username = usernameModule(client);
-  const query = queryModule(client);
-  const waitingList = waitingListModule(client);
-  const infra = infraModule(client);
-  const dappConfig = dappConfigModule(client);
-  const transfer = transferModule(client);
-  const batch = batchModule(client);
-  const account = accountModule(client);
-  const collection = collectionModule(client);
-  const result = resultModule(client);
+  const tag = tagModule(client);
   const token = tokenModule(client);
+  const transaction = transactionModule(client);
+  const transfer = transferModule(client);
+  const username = usernameModule(client);
+  const waitingList = waitingListModule(client);
   const xexchange = xexchangeModule(client);
-  const marketplace = marketplaceModule(client);
 
   return {
+    ...account,
+    ...batch,
     ...block,
+    ...collection,
+    ...dappConfig,
     ...delegation,
     ...identity,
-    ...transaction,
+    ...infra,
     ...key,
+    ...marketplace,
     ...miniblock,
     ...network,
-    ...tag,
     ...node,
     ...provider,
+    ...query,
+    ...result,
     ...round,
     ...shard,
     ...stake,
-    ...username,
-    ...query,
-    ...waitingList,
-    ...infra,
-    ...dappConfig,
-    ...transfer,
-    ...batch,
-    ...account,
-    ...collection,
-    ...result,
+    ...tag,
     ...token,
+    ...transaction,
+    ...transfer,
+    ...username,
+    ...waitingList,
     ...xexchange,
-    ...marketplace,
 
     configure: ({ chainId }: ConfigureProps = {}) => {
       if (chainId) {

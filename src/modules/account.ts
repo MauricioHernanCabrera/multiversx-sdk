@@ -119,7 +119,10 @@ export const accountModule = (client: ApiClient) => {
      * @tags account
      * @request GET:/accounts/{address}/tokens/count
      */
-    accountTokensCount: (address: string, query: AccountTokensCountQuery) => {
+    accountTokensCount: (
+      address: string,
+      query: AccountTokensCountQuery = {}
+    ) => {
       return client.get<number, AccountTokensCountQuery>(
         `/accounts/${address}/tokens/count`,
         query
