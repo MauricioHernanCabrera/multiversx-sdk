@@ -9,7 +9,7 @@ export const usernameModule = (client: ApiClient) => {
      * @tags username
      * @request GET:/usernames/{username}
      */
-    accountDetails: (username: string) => {
+    accountUsernameDetails: (username: string) => {
       return client.get<AccountUsername>(`/usernames/${username}`);
     },
   };
