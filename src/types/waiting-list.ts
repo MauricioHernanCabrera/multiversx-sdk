@@ -1,5 +1,3 @@
-import { Amount } from "./common";
-
 export interface WaitingList {
   /** @example "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz" */
   address: string;
@@ -11,7 +9,7 @@ export interface WaitingList {
    * Amount
    * @example ""2780000000000000000""
    */
-  value: Amount;
+  value: string;
 }
 
 export interface WaitingListQuery {

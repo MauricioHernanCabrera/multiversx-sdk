@@ -4,7 +4,6 @@ import {
   NftRarities,
   TokenAssets,
   UnlockMileStoneModel,
-  Amount,
   ScamInfo,
 } from "./";
 
@@ -249,7 +248,7 @@ export interface Nft {
    * Amount
    * @example ""2490000000000000000""
    */
-  supply: Amount;
+  supply: string;
   decimals: number | null;
   assets: TokenAssets;
   ticker: string;

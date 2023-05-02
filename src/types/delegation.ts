@@ -1,26 +1,24 @@
-import { Amount } from "./";
-
 export interface Delegation {
   /**
    * Amount
    * @example ""6890000000000000000""
    */
-  stake: Amount;
+  stake: string;
   /**
    * Amount
    * @example ""7170000000000000000""
    */
-  topUp: Amount;
+  topUp: string;
   /**
    * Amount
    * @example ""3750000000000000000""
    */
-  locked: Amount;
+  locked: string;
   /**
    * Amount
    * @example ""2370000000000000000""
    */
-  minDelegation: Amount;
+  minDelegation: string;
 }
 
 export interface DelegationLegacy {
@@ -28,26 +26,26 @@ export interface DelegationLegacy {
    * Amount
    * @example ""5480000000000000000""
    */
-  totalWithdrawOnlyStake: Amount;
+  totalWithdrawOnlyStake: string;
   /**
    * Amount
    * @example ""4000000000000000000""
    */
-  totalWaitingStake: Amount;
+  totalWaitingStake: string;
   /**
    * Amount
    * @example ""4840000000000000000""
    */
-  totalActiveStake: Amount;
+  totalActiveStake: string;
   /**
    * Amount
    * @example ""8660000000000000000""
    */
-  totalUnstakedStake: Amount;
+  totalUnstakedStake: string;
   /**
    * Amount
    * @example ""1490000000000000000""
    */
-  totalDeferredPaymentStake: Amount;
+  totalDeferredPaymentStake: string;
   numUsers: number;
 }

@@ -1,5 +1,3 @@
-import { Amount } from "./common";
-
 export interface AccountUsername {
   /** @example "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz" */
   address: string;
@@ -9,7 +7,7 @@ export interface AccountUsername {
    * Amount
    * @example ""4780000000000000000""
    */
-  balance: Amount;
+  balance: string;
   /** @example "829LsRk/pB5HCJZTvZzkBJ8g4ca1RiBpYjLzzK61pwM=" */
   rootHash: string;
   /** @example 47 */

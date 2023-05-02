@@ -1,5 +1,3 @@
-import { Amount } from "./";
-
 export interface IdentitiesQuery {
   /** Filter by comma-separated list of identities */
   identities?: string | string[];
@@ -19,17 +17,17 @@ export interface Identity {
    * Amount
    * @example ""1300000000000000000""
    */
-  stake: Amount;
+  stake: string;
   /**
    * Amount
    * @example ""7070000000000000000""
    */
-  topUp: Amount;
+  topUp: string;
   /**
    * Amount
    * @example ""380000000000000000""
    */
-  locked: Amount;
+  locked: string;
   distribution: object;
   providers: string[];
   stakePercent: number;

@@ -1,5 +1,3 @@
-import { Amount } from "./";
-
 export interface TokenAssets {
   website: string;
   description: string;
@@ -32,17 +30,17 @@ export interface TokenWithBalance {
    * Amount
    * @example ""9340000000000000000""
    */
-  minted: Amount;
+  minted: string;
   /**
    * Amount
    * @example ""780000000000000000""
    */
-  burnt: Amount;
+  burnt: string;
   /**
    * Amount
    * @example ""7200000000000000000""
    */
-  initialMinted: Amount;
+  initialMinted: string;
   decimals: number;
   /** @default false */
   isPaused: boolean;
@@ -68,20 +66,20 @@ export interface TokenWithBalance {
    * Supply amount
    * @example ""4100000000000000000""
    */
-  supply: Amount;
+  supply: string;
   /**
    * Amount
    * Circulating supply amount
    * @example ""3360000000000000000""
    */
-  circulatingSupply: Amount;
+  circulatingSupply: string;
   /** Creation timestamp */
   timestamp: number;
   /**
    * Amount
    * @example ""2100000000000000000""
    */
-  balance: Amount;
+  balance: string;
   valueUsd: number | null;
   attributes: string | null;
 }
@@ -110,17 +108,17 @@ export interface TokenWithRoles {
    * Amount
    * @example ""9340000000000000000""
    */
-  minted: Amount;
+  minted: string;
   /**
    * Amount
    * @example ""780000000000000000""
    */
-  burnt: Amount;
+  burnt: string;
   /**
    * Amount
    * @example ""7200000000000000000""
    */
-  initialMinted: Amount;
+  initialMinted: string;
   decimals: number;
   /** @default false */
   isPaused: boolean;
@@ -146,13 +144,13 @@ export interface TokenWithRoles {
    * Supply amount
    * @example ""4100000000000000000""
    */
-  supply: Amount;
+  supply: string;
   /**
    * Amount
    * Circulating supply amount
    * @example ""3360000000000000000""
    */
-  circulatingSupply: Amount;
+  circulatingSupply: string;
   /** Creation timestamp */
   timestamp: number;
   role: TokenRoles;
@@ -202,19 +200,19 @@ export interface TokenDetailed {
    * Minted amount
    * @example ""2340000000000000000""
    */
-  minted: Amount;
+  minted: string;
   /**
    * Amount
    * Burnt amount
    * @example ""4720000000000000000""
    */
-  burnt: Amount;
+  burnt: string;
   /**
    * Amount
    * Initial minted amount
    * @example ""3710000000000000000""
    */
-  initialMinted: Amount;
+  initialMinted: string;
   decimals: number;
   /** @default false */
   isPaused: boolean;
@@ -240,13 +238,13 @@ export interface TokenDetailed {
    * Supply amount
    * @example ""1110000000000000000""
    */
-  supply: Amount;
+  supply: string;
   /**
    * Amount
    * Circulating supply amount
    * @example ""2180000000000000000""
    */
-  circulatingSupply: Amount;
+  circulatingSupply: string;
   /** Creation timestamp */
   timestamp: number;
   roles: TokenRoles[] | null;
@@ -278,27 +276,27 @@ export interface EsdtSupply {
    * Amount
    * @example ""4360000000000000000""
    */
-  totalSupply: Amount;
+  totalSupply: string;
   /**
    * Amount
    * @example ""9400000000000000000""
    */
-  circulatingSupply: Amount;
+  circulatingSupply: string;
   /**
    * Amount
    * @example ""7730000000000000000""
    */
-  minted: Amount;
+  minted: string;
   /**
    * Amount
    * @example ""390000000000000000""
    */
-  burned: Amount;
+  burned: string;
   /**
    * Amount
    * @example ""6190000000000000000""
    */
-  initialMinted: Amount;
+  initialMinted: string;
   lockedAccounts: object;
 }
 
@@ -316,7 +314,7 @@ export interface TokenAccount {
    * Amount
    * @example ""400000000000000000""
    */
-  balance: Amount;
+  balance: string;
   identifier: string | null;
   attributes: string | null;
 }

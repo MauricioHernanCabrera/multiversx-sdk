@@ -1,5 +1,3 @@
-import { Amount } from "./common";
-
 export interface Provider {
   numNodes: number;
   stake: string;
@@ -13,22 +11,22 @@ export interface Provider {
    * Amount
    * @example ""3010000000000000000""
    */
-  serviceFee: Amount;
+  serviceFee: string;
   /**
    * Amount
    * @example ""8410000000000000000""
    */
-  delegationCap: Amount;
+  delegationCap: string;
   /**
    * Amount
    * @example ""3110000000000000000""
    */
-  apr: Amount;
+  apr: string;
   /**
    * Amount
    * @example ""6580000000000000000""
    */
-  numUsers: Amount;
+  numUsers: string;
   cumulatedRewards: string | null;
   identity: string | null;
   initialOwnerFunds: string;

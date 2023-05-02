@@ -1,4 +1,4 @@
-import { AccountAssets, Amount, TransactionAction, TransactionLog } from "./";
+import { AccountAssets, TransactionAction, TransactionLog } from "./";
 
 export interface SmartContractResult {
   hash: string;
@@ -10,7 +10,7 @@ export interface SmartContractResult {
    * Amount
    * @example ""9710000000000000000""
    */
-  value: Amount;
+  value: string;
   sender: string;
   receiver: string;
   senderAssets: AccountAssets | null;

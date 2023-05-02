@@ -1,5 +1,4 @@
 import {
-  Amount,
   ScamInfo,
   CollectionTrait,
   CollectionAuctionStats,
@@ -40,7 +39,7 @@ export interface Account {
    * Account current balance
    * @example ""5260000000000000000""
    */
-  balance: Amount;
+  balance: string;
   /**
    * Account current nonce
    * @example 42
@@ -78,7 +77,7 @@ export interface AccountDetailed {
    * Account current balance
    * @example ""5260000000000000000""
    */
-  balance: Amount;
+  balance: string;
   /**
    * Account current nonce
    * @example 42
@@ -135,7 +134,7 @@ export interface AccountDeferred {
    * Deferred payment amount
    * @example ""5330000000000000000""
    */
-  deferredPayment: Amount;
+  deferredPayment: string;
   /** Seconds left until unbonding time */
   secondsLeft: number;
 }
@@ -478,7 +477,7 @@ export interface NftAccount {
    * Amount
    * @example ""2490000000000000000""
    */
-  supply: Amount;
+  supply: string;
   decimals: number | null;
   assets: TokenAssets;
   ticker: string;
@@ -530,7 +529,7 @@ export interface ProviderUnstakedTokens {
    * Amount
    * @example ""6700000000000000000""
    */
-  amount: Amount;
+  amount: string;
   expires: number | null;
   epochs: number | null;
 }
@@ -540,7 +539,7 @@ export interface ProviderStake {
    * Amount
    * @example ""6820000000000000000""
    */
-  totalStaked: Amount;
+  totalStaked: string;
   unstakedTokens: ProviderUnstakedTokens[] | null;
 }
 
@@ -549,7 +548,7 @@ export interface AccountUndelegation {
    * Amount
    * @example ""2200000000000000000""
    */
-  amount: Amount;
+  amount: string;
   seconds: number;
 }
 
@@ -560,17 +559,17 @@ export interface AccountDelegation {
    * Amount
    * @example ""6460000000000000000""
    */
-  userUnBondable: Amount;
+  userUnBondable: string;
   /**
    * Amount
    * @example ""3470000000000000000""
    */
-  userActiveStake: Amount;
+  userActiveStake: string;
   /**
    * Amount
    * @example ""7640000000000000000""
    */
-  claimableRewards: Amount;
+  claimableRewards: string;
   userUndelegatedList: AccountUndelegation[];
 }
 
@@ -596,12 +595,12 @@ export interface AccountKey {
    * Amount
    * @example ""6420000000000000000""
    */
-  stake: Amount;
+  stake: string;
   /**
    * Amount
    * @example ""6050000000000000000""
    */
-  topUp: Amount;
+  topUp: string;
   /** @example "online" */
   status: string;
   /** @example "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz" */
@@ -806,7 +805,7 @@ export interface AccountHistory {
    * Amount
    * @example ""5920000000000000000""
    */
-  balance: Amount;
+  balance: string;
   /** @example 10000 */
   timestamp: number;
   /** @example true */
@@ -845,7 +844,7 @@ export interface AccountEsdtHistory {
    * Amount
    * @example ""5920000000000000000""
    */
-  balance: Amount;
+  balance: string;
   /** @example 10000 */
   timestamp: number;
   /** @example true */

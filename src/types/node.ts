@@ -1,5 +1,3 @@
-import { Amount } from "./common";
-
 export interface Node {
   bls: string;
   name: string;
@@ -32,17 +30,17 @@ export interface Node {
    * Amount
    * @example ""9510000000000000000""
    */
-  stake: Amount;
+  stake: string;
   /**
    * Amount
    * @example ""7400000000000000000""
    */
-  topUp: Amount;
+  topUp: string;
   /**
    * Amount
    * @example ""7470000000000000000""
    */
-  locked: Amount;
+  locked: string;
   /** @default 0 */
   leaderFailure: number;
   /** @default 15 */

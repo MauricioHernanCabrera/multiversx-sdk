@@ -1,5 +1,3 @@
-import { Amount } from "./common";
-
 export interface GlobalStake {
   /** @default 3200 */
   totalValidators: number;
@@ -11,5 +9,5 @@ export interface GlobalStake {
    * Amount
    * @example ""7890000000000000000""
    */
-  totalStaked: Amount;
+  totalStaked: string;
 }
