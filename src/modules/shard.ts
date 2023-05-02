@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { Shard, ShardsQuery } from "../types";
 
 export const shardModule = (client: ApiClient) => {

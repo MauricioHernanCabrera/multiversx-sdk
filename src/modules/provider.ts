@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { ProvidersQuery, Provider } from "../types";
 
 export const providerModule = (client: ApiClient) => {

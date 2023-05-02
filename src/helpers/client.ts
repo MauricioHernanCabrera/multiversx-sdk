@@ -1,11 +1,11 @@
-import axios, { AxiosInstance } from "axios";
+import axios from "axios";
 import * as queryString from "query-string";
 
-export class ApiClient {
-  private axiosInstance: AxiosInstance;
+import ClientRetry from "./client-retry";
 
+export class ApiClient extends ClientRetry {
   constructor() {
-    this.axiosInstance = axios.create();
+    super(axios.create());
   }
 
   setHeader = (property: string, data: string) => {

@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { WaitingList, WaitingListQuery } from "../types";
 
 export const waitingListModule = (client: ApiClient) => {

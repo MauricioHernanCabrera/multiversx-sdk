@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { DappConfig } from "../types";
 
 export const dappConfigModule = (client: ApiClient) => {

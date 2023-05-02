@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { NetworkConstants, Economics, Stats, About } from "../types";
 
 export const networkModule = (client: ApiClient) => {

@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { TransactionBatchSimplified } from "../types";
 
 export const batchModule = (client: ApiClient) => {

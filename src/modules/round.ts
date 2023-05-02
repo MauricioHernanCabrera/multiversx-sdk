@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { RoundsQuery, Round, RoundsCountQuery, RoundDetailed } from "../types";
 
 export const roundModule = (client: ApiClient) => {

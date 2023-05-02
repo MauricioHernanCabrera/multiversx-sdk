@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { IdentitiesQuery, Identity } from "../types";
 
 export const identityModule = (client: ApiClient) => {

@@ -1,5 +1,6 @@
-import { ApiClient } from "./client";
 import { networkConfig } from "./config";
+import { ApiClient } from "./helpers/client";
+
 import {
   accountModule,
   batchModule,
@@ -88,9 +89,13 @@ const mxSDK = () => {
     ...waitingList,
     ...xexchange,
 
-    configure: ({ chainId }: ConfigureProps = {}) => {
+    configure: ({ chainId, retry }: ConfigureProps = {}) => {
       if (chainId) {
         client.setBaseURL(networkConfig[chainId].apiAddress);
+      }
+
+      if (retry) {
+        client.setOptions(retry);
       }
     },
   };

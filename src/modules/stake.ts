@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { GlobalStake } from "../types";
 
 export const stakeModule = (client: ApiClient) => {

@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { BlocksQuery, Block, BlocksCountQuery, BlockDetailed } from "../types";
 
 export const blockModule = (client: ApiClient) => {

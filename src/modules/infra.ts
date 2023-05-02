@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 
 export const infraModule = (client: ApiClient) => {
   return {

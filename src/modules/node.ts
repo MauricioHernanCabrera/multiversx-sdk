@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { Node, NodesCountQuery, NodesQuery, NodeVersion } from "../types";
 
 export const nodeModule = (client: ApiClient) => {

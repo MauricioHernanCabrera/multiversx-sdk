@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { NftTagsQuery, Tag, NftTagsCountQuery } from "../types";
 
 export const tagModule = (client: ApiClient) => {

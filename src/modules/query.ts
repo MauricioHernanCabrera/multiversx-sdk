@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { VmQueryRequest } from "../types";
 
 export const queryModule = (client: ApiClient) => {

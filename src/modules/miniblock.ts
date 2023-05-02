@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { MiniblocksQuery, MiniBlockDetailed } from "../types";
 
 export const miniblockModule = (client: ApiClient) => {

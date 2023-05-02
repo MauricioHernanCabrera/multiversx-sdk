@@ -1,4 +1,4 @@
-import { ApiClient } from "../client";
+import { ApiClient } from "../helpers/client";
 import { SmartContractResult, SmartContractResultsQuery } from "../types";
 
 export const resultModule = (client: ApiClient) => {
