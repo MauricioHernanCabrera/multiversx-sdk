@@ -29,7 +29,7 @@ export interface Identity {
    */
   locked: string;
   distribution: object;
-  providers: string[];
+  providers: string | string[];
   stakePercent: number;
   rank: number;
   apr: number;
