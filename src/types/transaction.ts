@@ -65,7 +65,7 @@ export interface TransactionListQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transaction hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Filter transactions by function name */
@@ -135,7 +135,7 @@ export interface TransactionsCountQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transaction hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Filter transactions by function name */

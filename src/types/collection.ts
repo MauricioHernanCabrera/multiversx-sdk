@@ -314,7 +314,7 @@ export interface CollectionTransactionsQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transaction hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Filter transactions by function name */
@@ -349,7 +349,7 @@ export interface CollectionTransactionsCountQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transaction hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Before timestamp */

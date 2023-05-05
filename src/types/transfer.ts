@@ -18,7 +18,7 @@ export interface TransfersQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transfer hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Before timestamp */
@@ -50,7 +50,7 @@ export interface TransfersCountQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transfer hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Filter transfers by function name */

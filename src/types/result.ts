@@ -34,5 +34,5 @@ export interface SmartContractResultsQuery {
   /** The hash of the parent miniBlock */
   miniBlockHash?: string;
   /** Original transaction hashes */
-  originalTxHashes?: string[];
+  originalTxhashes?: string | string[];
 }

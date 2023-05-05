@@ -629,7 +629,7 @@ export interface AccountTransactionListQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transaction hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Filter transactions by function name */
@@ -672,7 +672,7 @@ export interface AccountTransactionsCountQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transaction hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Filter transactions by function name */
@@ -701,7 +701,7 @@ export interface AccountTransfersQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transfer hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Filter transactions by function name */
@@ -738,7 +738,7 @@ export interface AccountTransfersCountQuery {
   /** Filter by miniblock hash */
   miniBlockHash?: string;
   /** Filter by a comma-separated list of transfer hashes */
-  hashes?: string[];
+  hashes?: string | string[];
   /** Status of the transaction (success / pending / invalid / fail) */
   status?: "success" | "pending" | "invalid" | "fail";
   /** Filter transfers by function name */
