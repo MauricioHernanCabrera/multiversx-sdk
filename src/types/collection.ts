@@ -54,7 +54,7 @@ export interface CollectionsQuery {
   /** Search by collection identifier */
   search?: string;
   /** Search by collection identifiers, comma-separated */
-  identifiers?: string[];
+  identifiers?: string | string[];
   /** Filter by type (NonFungibleESDT/SemiFungibleESDT/MetaESDT) */
   type?: string[];
   /**
@@ -193,7 +193,7 @@ export interface CollectionNftsQuery {
   /** Search by collection identifier */
   search?: string;
   /** Search by token identifiers, comma-separated */
-  identifiers?: string[];
+  identifiers?: string | string[];
   /** Get all nfts by name */
   name?: string;
   /** Filter by one or more comma-separated tags */
@@ -265,7 +265,7 @@ export interface CollectionNftsCountQuery {
   /** Search by collection identifier */
   search?: string;
   /** Search by token identifiers, comma-separated */
-  identifiers?: string[];
+  identifiers?: string | string[];
   /** Get all nfts by name */
   name?: string;
   /** Filter by one or more comma-separated tags */

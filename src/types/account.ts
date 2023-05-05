@@ -164,7 +164,7 @@ export interface AccountTokensQuery {
   /** Search by token identifier */
   identifier?: string;
   /** A comma-separated list of identifiers to filter by */
-  identifiers?: string;
+  identifiers?: string | string[];
   /** Include MetaESDTs in response */
   includeMetaESDT?: boolean;
 }
@@ -179,7 +179,7 @@ export interface AccountTokensCountQuery {
   /** Search by token identifier */
   identifier?: string;
   /** A comma-separated list of identifiers to filter by */
-  identifiers?: string;
+  identifiers?: string | string[];
   /** Include MetaESDTs in response */
   includeMetaESDT?: boolean;
 }
@@ -363,7 +363,7 @@ export interface AccountNftsQuery {
   /** Search by collection identifier */
   search?: string;
   /** Filter by identifiers, comma-separated */
-  identifiers?: string[];
+  identifiers?: string | string[];
   /** Filter by type (NonFungibleESDT/SemiFungibleESDT/MetaESDT) */
   type?: string;
   /**
@@ -494,7 +494,7 @@ export interface NftAccount {
 
 export interface AccountNftsCountQuery {
   /** Filter by identifiers, comma-separated */
-  identifiers?: string[];
+  identifiers?: string | string[];
   /** Search by collection identifier */
   search?: string;
   /** Filter by type (NonFungibleESDT/SemiFungibleESDT/MetaESDT) */

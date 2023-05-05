@@ -178,7 +178,7 @@ export interface TokensQuery {
   /** Search by token identifier */
   identifier?: string;
   /** Search by multiple token identifiers, comma-separated */
-  identifiers?: string[];
+  identifiers?: string | string[];
   /** Sorting criteria */
   sort?: "accounts" | "transactions" | "price" | "marketCap";
   /** Sorting order (asc / desc) */
@@ -261,7 +261,7 @@ export interface TokensCountQuery {
   /** Search by token identifier */
   identifier?: string;
   /** Search by multiple token identifiers, comma-separated */
-  identifiers?: string[];
+  identifiers?: string | string[];
   /** Include MetaESDTs in response */
   includeMetaESDT?: boolean;
 }
