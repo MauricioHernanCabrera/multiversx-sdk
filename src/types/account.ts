@@ -372,7 +372,7 @@ export interface AccountNftsQuery {
    */
   collection?: string;
   /** Get all tokens by token collections, comma-separated */
-  collections?: string[];
+  collections?: string | string[];
   /** Get all nfts by name */
   name?: string;
   /** Filter by one or more comma-separated tags */
@@ -502,7 +502,7 @@ export interface AccountNftsCountQuery {
   /** Get all tokens by token collection */
   collection?: string;
   /** Get all tokens by token collections, comma-separated */
-  collections?: string[];
+  collections?: string | string[];
   /** Get all nfts by name */
   name?: string;
   /** Filter by one or more comma-separated tags */
