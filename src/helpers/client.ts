@@ -22,7 +22,7 @@ export class ApiClient extends ClientRetry {
 
   async get<T, K = undefined>(path: string, query?: K) {
     const response = await this.axiosInstance.get<T>(
-      `${path}?${queryString.stringify(query)}`
+      `${path}${query ? "?" : ""}${queryString.stringify(query)}`
     );
     return response.data;
   }
