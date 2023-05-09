@@ -79,3 +79,7 @@ export interface BlockDetailed {
   notarizedBlocksHashes: string[];
   validators: string[];
 }
+
+export interface BlockLatestQuery {
+  ttl?: number;
+}

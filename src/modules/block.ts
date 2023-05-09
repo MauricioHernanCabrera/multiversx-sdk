@@ -1,5 +1,11 @@
 import { ApiClient } from "../helpers/client";
-import { BlocksQuery, Block, BlocksCountQuery, BlockDetailed } from "../types";
+import {
+  BlocksQuery,
+  Block,
+  BlocksCountQuery,
+  BlockDetailed,
+  BlockLatestQuery,
+} from "../types";
 
 export const blockModule = (client: ApiClient) => {
   return {
@@ -31,6 +37,19 @@ export const blockModule = (client: ApiClient) => {
      */
     blockDetails: (hash: string) => {
       return client.get<BlockDetailed>(`/blocks/${hash}`);
+    },
+
+    /**
+     * @description Returns latest block information details
+     *
+     * @tags block
+     * @request GET:/blocks/latest
+     */
+    blockLatest: (query: BlockLatestQuery = {}) => {
+      return client.get<BlockDetailed, BlockLatestQuery>(
+        `/blocks/latest`,
+        query
+      );
     },
   };
 };
