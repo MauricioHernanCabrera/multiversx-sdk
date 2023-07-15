@@ -106,3 +106,5 @@ const mxSDK = () => {
 };
 
 export default mxSDK();
+
+export { mxSDK };
