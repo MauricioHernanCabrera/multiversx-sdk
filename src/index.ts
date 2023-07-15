@@ -89,9 +89,13 @@ const mxSDK = () => {
     ...waitingList,
     ...xexchange,
 
-    configure: ({ chainId, retry }: ConfigureProps = {}) => {
+    configure: ({ chainId, retry, customBaseURL }: ConfigureProps = {}) => {
       if (chainId) {
         client.setBaseURL(networkConfig[chainId].apiAddress);
+      }
+
+      if (customBaseURL) {
+        client.setBaseURL(customBaseURL);
       }
 
       if (retry) {
