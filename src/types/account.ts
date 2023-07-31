@@ -619,7 +619,7 @@ export interface AccountTransactionListQuery {
   /** Address of the transaction sender */
   sender?: string;
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Identifier of the token */
   token?: string;
   /** Id of the shard the sender address belongs to */
@@ -662,7 +662,7 @@ export interface AccountTransactionsCountQuery {
   /** Address of the transaction sender */
   sender?: string;
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Identifier of the token */
   token?: string;
   /** Id of the shard the sender address belongs to */
@@ -691,7 +691,7 @@ export interface AccountTransfersQuery {
   /** Address of the transfer sender */
   sender?: string[];
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Identifier of the token */
   token?: string;
   /** Id of the shard the sender address belongs to */
@@ -728,7 +728,7 @@ export interface AccountTransfersCountQuery {
   /** Address of the transfer sender */
   sender?: string;
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Identifier of the token */
   token?: string;
   /** Id of the shard the sender address belongs to */

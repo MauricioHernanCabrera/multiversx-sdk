@@ -306,7 +306,7 @@ export interface CollectionTransactionsQuery {
   /** Address of the transaction sender */
   sender?: string;
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Id of the shard the sender address belongs to */
   senderShard?: number;
   /** Id of the shard the receiver address belongs to */
@@ -341,7 +341,7 @@ export interface CollectionTransactionsCountQuery {
   /** Address of the transaction sender */
   sender?: string;
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Id of the shard the sender address belongs to */
   senderShard?: number;
   /** Id of the shard the receiver address belongs to */

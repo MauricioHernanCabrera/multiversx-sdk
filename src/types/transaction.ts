@@ -55,7 +55,7 @@ export interface TransactionListQuery {
   /** Address of the transaction sender */
   sender?: string;
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Identifier of the token */
   token?: string;
   /** Id of the shard the sender address belongs to */
@@ -125,7 +125,7 @@ export interface TransactionsCountQuery {
   /** Address of the transaction sender */
   sender?: string;
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Identifier of the token */
   token?: string;
   /** Id of the shard the sender address belongs to */

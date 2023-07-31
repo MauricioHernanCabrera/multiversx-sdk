@@ -4,7 +4,7 @@ export interface TransfersQuery {
   /** Number of items to retrieve */
   size?: number;
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Search by multiple sender addresses, comma-separated */
   sender?: string[];
   /** Identifier of the token */
@@ -40,7 +40,7 @@ export interface TransfersCountQuery {
   /** Search by multiple sender addresses, comma-separated */
   sender?: string[];
   /** Search by multiple receiver addresses, comma-separated */
-  receiver?: string[];
+  receiver?: string[] | string;
   /** Identifier of the token */
   token?: string;
   /** Id of the shard the sender address belongs to */
