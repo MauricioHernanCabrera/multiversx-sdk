@@ -126,6 +126,14 @@ export interface AccountDetailed {
   /** Specific property flag for smart contract */
   isPayableBySmartContract: boolean | null;
   scamInfo: ScamInfo | null;
+
+  activeGuardianActivationEpoch: number;
+  activeGuardianAddress: string;
+  activeGuardianServiceUid: string;
+  pendingGuardianActivationEpoch: number;
+  pendingGuardianAddress: string;
+  pendingGuardianServiceUid: string;
+  isGuarded: boolean;
 }
 
 export interface AccountDeferred {
