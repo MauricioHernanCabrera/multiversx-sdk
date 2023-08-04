@@ -1,6 +1,6 @@
 {
   "name": "multiversx-sdk",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "",
   "author": "Mauricio Hernan Cabrera <mauriciohernancabrera@gmail.com>",
   "types": "dist/index.d.ts",
