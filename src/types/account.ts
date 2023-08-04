@@ -68,7 +68,7 @@ export interface AccountsCountQuery {
 
 export interface AccountDetailsQuery {
   /** Search by owner address */
-  withGuardianInfo?: string;
+  withGuardianInfo?: boolean;
 }
 
 export interface AccountDetailed {
