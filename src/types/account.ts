@@ -66,6 +66,11 @@ export interface AccountsCountQuery {
   ownerAddress?: string;
 }
 
+export interface AccountDetailsQuery {
+  /** Search by owner address */
+  withGuardianInfo?: string;
+}
+
 export interface AccountDetailed {
   /**
    * Account bech32 address

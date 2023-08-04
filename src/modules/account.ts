@@ -44,6 +44,7 @@ import {
   AccountTokenHistoryCountQuery,
   AccountTokenHistoryQuery,
   AccountEsdtHistory,
+  AccountDetailsQuery,
 } from "../types";
 
 export const accountModule = (client: ApiClient) => {
@@ -74,8 +75,11 @@ export const accountModule = (client: ApiClient) => {
      * @tags account
      * @request GET:/accounts/{address}
      */
-    accountDetails: (address: string) => {
-      return client.get<AccountDetailed>(`/accounts/${address}`);
+    accountDetails: (address: string, query: AccountDetailsQuery = {}) => {
+      return client.get<AccountDetailed, AccountDetailsQuery>(
+        `/accounts/${address}`,
+        query
+      );
     },
 
     /**
