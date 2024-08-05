@@ -185,6 +185,7 @@ export interface TokensQuery {
   order?: "asc" | "desc";
   /** Include MetaESDTs in response */
   includeMetaESDT?: boolean;
+  fields?: string;
 }
 
 export interface TokenDetailed {

@@ -180,6 +180,7 @@ export interface AccountTokensQuery {
   identifiers?: string | string[];
   /** Include MetaESDTs in response */
   includeMetaESDT?: boolean;
+  fields?: string
 }
 
 export interface AccountTokensCountQuery {
