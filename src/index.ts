@@ -29,6 +29,7 @@ import {
   waitingListModule,
   xexchangeModule,
 } from "./modules";
+import { nftModule } from "./modules/nft";
 import { ConfigureProps } from "./types";
 
 const mxSDK = () => {
@@ -60,6 +61,7 @@ const mxSDK = () => {
   const username = usernameModule(client);
   const waitingList = waitingListModule(client);
   const xexchange = xexchangeModule(client);
+  const nft = nftModule(client);
 
   return {
     ...account,
@@ -88,6 +90,7 @@ const mxSDK = () => {
     ...username,
     ...waitingList,
     ...xexchange,
+    ...nft,
 
     configure: ({ chainId, retry, customBaseURL }: ConfigureProps = {}) => {
       if (chainId) {

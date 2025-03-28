@@ -25,3 +25,4 @@ export * from "./token";
 export * from "./xexchange";
 export * from "./marketplace";
 export * from "./config";
+export * from "./nft";
