@@ -92,7 +92,12 @@ const mxSDK = () => {
     ...xexchange,
     ...nft,
 
-    configure: ({ chainId, retry, customBaseURL }: ConfigureProps = {}) => {
+    configure: ({
+      chainId,
+      retry,
+      customBaseURL,
+      headers,
+    }: ConfigureProps = {}) => {
       if (chainId) {
         client.setBaseURL(networkConfig[chainId].apiAddress);
       }
@@ -103,6 +108,12 @@ const mxSDK = () => {
 
       if (retry) {
         client.setOptions(retry);
+      }
+
+      if (headers) {
+        Object.entries(headers).forEach(([key, value]) => {
+          client.setHeader(key, value);
+        });
       }
     },
   };
