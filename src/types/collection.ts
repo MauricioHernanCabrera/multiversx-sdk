@@ -190,6 +190,8 @@ export interface CollectionNftsQuery {
   from?: number;
   /** Number of items to retrieve */
   size?: number;
+  /** List of fields to filter by */
+  fields?: string;
   /** Search by collection identifier */
   search?: string;
   /** Search by token identifiers, comma-separated */
